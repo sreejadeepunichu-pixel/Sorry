@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sorry Ayusha 💗</title>
+<meta name="description" content="A cute e-card to say sorry to Ayusha 💗">
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Poppins", sans-serif;
+        overflow: hidden;
+    }
+    .card {
+        background: white;
+        padding: 25px 35px;
+        border-radius: 18px;
+        text-align: center;
+        box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+        max-width: 330px;
+        animation: fadeIn 1s ease-in-out;
+        position: relative;
+        z-index: 2;
+    }
+    h2 {
+        margin: 0;
+        font-size: 26px;
+        color: #ff4f70;
+    }
+    p {
+        margin-top: 10px;
+        color: #444;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+    .heart {
+        font-size: 50px;
+        margin: 15px 0;
+        color: #ff4f70;
+        animation: heartbeat 1.3s infinite;
+    }
+    @keyframes heartbeat {
+        0% { transform: scale(1); }
+        25% { transform: scale(1.2); }
+        50% { transform: scale(1); }
+        75% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+    }
+    .btn {
+        margin-top: 18px;
+        background: #ff4f70;
+        color: white;
+        border: none;
+        padding: 12px 22px;
+        font-size: 16px;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .btn:hover { background: #ff294e; }
+    .hidden { display: none; }
+    .happy-msg {
+        font-size: 22px;
+        color: #ff4f70;
+        margin-top: 20px;
+        animation: pop 0.5s ease-out;
+    }
+    @keyframes pop {
+        0% { transform: scale(0.5); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+    }
+    @keyframes floatUp {
+        from { transform: translateY(0); opacity: 0.8; }
+        to { transform: translateY(-120vh); opacity: 0; }
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Sorry Ayusha 💗</h2>
+    <div class="heart">💖</div>
+    <p>
+        Hey Ayusha…<br>
+        I’m really sorry for yesterday.<br>
+        I didn’t mean to make things weird or hurt you in any way.
+    </p>
+    <button class="btn" onclick="showHappy()">Forgive me? 🥺</button>
+    <div id="happy" class="hidden happy-msg">Yay! You're the best 💗😊</div>
+</div>
+
+<script>
+function showHappy() {
+    document.getElementById("happy").classList.remove("hidden");
+}
+
+// Floating hearts animation
+function createHeart() {
+    const heart = document.createElement('div');
+    heart.textContent = '❤️';
+    heart.style.position = 'fixed';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.bottom = '-20px';
+    heart.style.fontSize = (18 + Math.random() * 18) + 'px';
+    heart.style.opacity = '0.9';
+    heart.style.zIndex = 1;
+    heart.style.pointerEvents = 'none';
+    heart.style.animation = 'floatUp 4s linear forwards';
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 4200);
+}
+setInterval(createHeart, 800);
+</script>
+
+</body>
+</html>
